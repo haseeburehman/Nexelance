@@ -1,0 +1,155 @@
+/* Apply to image background */
+.left-section {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.left-section img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.gradient-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+}
+
+.left-content {
+    position: relative;
+    padding: 1.5rem;
+    color: white;
+}
+
+.left-content h3 {
+    font-weight: bold;
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.list-group {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+}
+
+/* Right section */
+.form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-container h2 {
+    font-weight: bold;
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+}
+
+.form-container p {
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.form-container form {
+    margin-bottom: 2rem;
+}
+
+.form-container form .form-label {
+    font-weight: bold;
+}
+
+.form-container form .form-control {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+}
+
+.form-container form .form-control:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.form-container .btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+}
+
+.btn-dark {
+    background-color: #343a40;
+    color: white;
+    border: none;
+}
+
+.btn-outline-secondary,
+.btn-outline-primary {
+    background-color: white;
+    border: 1px solid #ced4da;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-outline-primary {
+    border-color: #007bff;
+}
+
+.btn-outline-primary svg {
+    margin-right: 0.5rem;
+}
+
+.btn-outline-secondary svg {
+    margin-right: 0.5rem;
+}
+
+.text-end {
+    text-align: end;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.text-dark {
+    color: #343a40;
+}

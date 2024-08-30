@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Home</title>
+    <!-- font Awesome -->
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css"/>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <!-- main css -->
+    <link rel="stylesheet" type='text/css' media='screen' href='css/main.css'/>
+    <!-- animation css -->
+    <link rel="stylesheet" href="animate-css/animate.css"/>
+    <!-- own Animation css -->
+    <link rel="stylesheet" href="css/animat.css"/>
+    
+    <!-- canoncial -->
+    <link rel="canoncial" href="https://ad-mob-dev.web.app/">
+    
+    <title>Hiring Vacancy Page - NexeLance</title>
+    <style>
+        .button {
+            border-radius: 4px;
+            background-color: #F50057; 
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 19px;
+            width: 100px;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 20px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        .sticky-icons {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-color: #000000;  
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000; 
+        }
+
+        .sticky-icons .iconanchor {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .sticky-icons .iconanchor i {
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+
+        .sticky-icons .iconanchor:hover i {
+            color: #F50057;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a; 
+        }
+
+        header {
+            background-color: #000000; 
+            color: #F50057; 
+            text-align: center;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1a1a1a; 
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #F50057; 
+            margin-top: 0;
+        }
+
+        .job-listing {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #2c2c2c; 
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-title {
+            font-size: 1.6rem;
+            color: #4a90e2;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .job-title:hover {
+            color: #357abd; 
+        }
+
+        .job-description {
+            display: none;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .apply-link {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #F50057;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .apply-link:hover {
+            background-color: #C51162;
+            text-decoration: none;
+            color: #FFFFFF; 
+        }
+
+        .benefits, .culture {
+            margin: 30px 0;
+            padding: 15px;
+            background-color: whitesmoke; 
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefits:hover, .culture:hover {
+            background-color: rgb(177, 177, 177); 
+        }
+        .marquee {
+    background-color: #F50057; 
+    color: #FFFFFF; 
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer; 
+}
+
+.marquee p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 10s linear infinite;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.marquee.paused p {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <section class="container-fluid fixed-top" style="background-color: #000000 !important; opacity: 0.9;">
+            <nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style="color: white; background-color:#000000;">
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <i class="fa fa-heartbeat fa-2x nav-brand" style="color: #F50057;" aria-hidden="true"></i>
+                <a class="navbar-brand" id="navbra" href="index.html" style="margin-right:auto; margin-left: 0px; font-size: 18px !important;">
+                    &nbsp;
+                    Nexelance
+                </a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active badge-pill btn-outline-primary font-weight-bold" href="index.html">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="team.html">Our Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="hiringpage.html">Hiring Vacancy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="login.html"><button class="button"><span>login </span></button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="userprofile.html"><button class="button"><span>Singup </span></button></a>
+
+                        </li>
+                        <div class="sticky-icons idiv" style="margin-left:auto !important; margin-right: auto !important;">
+                            <a class="iconanchor " href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="iconanchor" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="iconanchor" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="iconanchor" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="iconanchor" href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+    </header>
+    <div class="marquee" id="marquee" onclick="toggleMarquee()">
+        <p>Sign up first to apply for jobs! Registration is required before applying.</p>
+    </div>
+    <div class="container">
+
+        <h2>Current Job Listings</h2>
+        <div class="job-listing">
+            <div class="job-title" onclick="toggleJob('job1')">Frontend Developer</div>
+            <div id="job1" class="job-description">
+                <p>We are looking for a Frontend Developer proficient in React.js and modern web technologies.</p>
+                <a href="applyforjob.html?role=Frontend%20Developer" class="apply-link">Apply Now</a>
+            </div>
+        </div>
+
+      
+                <div class="job-listing">
+                    <div class="job-title" onclick="toggleJob('job2')">Backend Developer</div>
+                    <div id="job2" class="job-description">
+                        <p>Seeking a skilled Backend Developer with experience in Node.js, Express.js, and MongoDB.</p>
+                        <a href="applyforjob.html?role=Backend%20Developer" class="apply-link">Apply Now</a>
+                    </div>
+                </div>
+    
+                <div class="job-listing">
+                    <div class="job-title" onclick="toggleJob('job3')">IOS Developer</div>
+                    <div id="job3" class="job-description">
+                        <p>We are looking for an iOS Developer with experience in Swift and Objective-C.</p>
+                        <a href="applyforjob.html?role=IOS%20Developer" class="apply-link">Apply Now</a>
+                    </div>
+                </div>
+    
+                <div class="job-listing">
+                    <div class="job-title" onclick="toggleJob('job4')">Tester</div>
+                    <div id="job4" class="job-description">
+                        <p>Looking for a Tester with a strong background in quality assurance and testing methodologies.</p>
+                        <a href="applyforjob.html?role=Tester" class="apply-link">Apply Now</a>
+                    </div>
+                </div>
+                
+                <div class="sticky-icons idiv" style="margin-left:auto !important; margin-right: auto !important;">
+                    <a class="iconanchor " href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="iconanchor" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="iconanchor" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="iconanchor" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="iconanchor" href="#"><i class="fab fa-github"></i></a>
+                </div>
+                
+                <h2>Employee Benefits</h2>
+                <div class="benefits">
+                    <ul>
+                        <li>Health and Wellness Programs</li>
+                        <li>Flexible Working Hours</li>
+                        <li>Paid Time Off</li>
+                        <li>Remote Work Opportunities</li>
+                    </ul>
+                </div>
+    
+                <h2>Our Company Culture</h2>
+                <div class="culture">
+                    <p>At NexeLance, we foster an inclusive and innovative work environment. We believe in teamwork, continuous learning, and providing our employees with the tools they need to succeed.</p>
+                </div>
+    
+            </div>
+            <footer class="page-footer container-fluid f">
+                <div class="row container-fluid animate__animated fadeIn">
+                    <div class="col-md-4 f1 animate__animated fadeInLeft">
+                      
+    
+                            <h3 >About us</h3>
+                            <hr>
+                            <i class=" fa fa-heartbeat fa-5x" style=" color: #F50057; " aria-hidden=" true "></i>
+                            <br>
+                            <span>
+                                <p class="p-3">Nexelance is the Software Development Company in Pakistan having the
+                                    specialists
+                                    for
+                                    creating the compelling and highly interactive websites & Softwares. Using
+                                    our
+                                    powerful
+                                    strategies we have created
+                                    some amazing websites & Softwares for our customers and have helped them to
+                                    market
+                                    their
+                                    business properly.</p>
+                            </span>
+                   
+    
+                    </div>
+                    <div class="col-md-4 f2 animate__animated fadeInUp" >
+                      
+                            <h3>Our Services</h3>
+                            <hr>
+    
+                            <ul>
+                                <li>
+                                    <p><i class=" fa fa-check "></i> Graphic Designing</p>
+                                </li>
+                                <li>
+                                    <p><i class=" fa fa-check "></i> Logo Designing </p>
+                                </li>
+                                <li>
+                                    <p><i class=" fa fa-check "></i> Content Writing </p>
+                                </li>
+                                <li>
+                                    <p><i class=" fa fa-check "></i> Website/Software Design</p>
+                                </li>
+                                <li>
+                                    <p><i class=" fa fa-check "></i> wordpress Web-Development </p>
+                                </li>
+                                <li>
+                                    <p><i class=" fa fa-check "></i> E-commerce Web-Development </p>
+                                </li>
+                                <li>
+                                    <p><i class=" fa fa-check "></i> Android/IoS App-Development </p>
+                                </li>
+                                <li>
+                                    <p><i class=" fa fa-check "></i> Website/Software Development </p>
+                                </li>
+                            </ul>
+                       </div>
+                    <div class=" col-md-4 f3 animate__animated fadeInRight">
+                        
+                            <h3>Contact Details</h3>
+                            <hr>
+                            <p> 
+                                Office: Blue Area, Islamabad </p>
+                            <p> <b>Timing :</b> Mon-Sat, 10:00am to 6:00pm</p>                      
+                            <p><b>Email:</b> info@Nexelance.com
+                            </p>                   
+                            <p><b>Phone:</b> +92-300-0101010</p>
+    
+                          
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col-md-12 footer_credit animate__animated fadeIn ">
+                        <strong> Copyright © 2020 Nexelance </strong>
+                    </div>
+                </div>
+        
+        </footer>
+            <script>
+                function toggleJob(jobId) {
+                    const jobDesc = document.getElementById(jobId);
+                    if (jobDesc.style.display === "none" || jobDesc.style.display === "") {
+                        jobDesc.style.display = "block";
+                    } else {
+                        jobDesc.style.display = "none";
+                    }
+                }
+
+                function toggleMarquee() {
+            const marquee = document.getElementById('marquee');
+            if (marquee.classList.contains('paused')) {
+                marquee.classList.remove('paused');
+            } else {
+                marquee.classList.add('paused');
+            }
+        }
+            </script>
+    
+            <script defer src="css/jquery.slim.min.js"></script>
+            <!-- popper.js -->
+            <script defer src="node_modules/@popperjs/core/dist/umd/popper.js"></script>
+            <!-- bootstrap.js -->
+            <script defer src="css/bootstrap.min.js"></script>
+        </body>
+    
+    </html>
+    

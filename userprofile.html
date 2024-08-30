@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Portal</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animation css -->
+    <link rel="stylesheet" href="animate-css/animate.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- font Awesome  -->
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+   
+    <style>
+        .Btn {
+            border-radius: 4px;
+            background-color: #F50057;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 19px;
+            padding: 3px;
+            width: 100px;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        .Btn span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .Btn span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .Btn:hover span {
+            padding-right: 20px;
+        }
+
+        .Btn:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        main section {
+            display: none;
+        }
+
+        main section.active-section {
+            display: block;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .portal-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #1e1e1e;
+            padding: 20px;
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .sidebar .logo h2 {
+            color: #F50057;
+            text-align: center;
+        }
+
+        .nav-menu {
+            margin-top: 90px;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 15px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-menu a.active,
+        .nav-menu a:hover {
+            background-color: #F50057;
+            color: #ffffff;
+        }
+
+        .main-content {
+            margin-left: 270px;
+            padding-top: 20px;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1,
+        h2 {
+            color: #F50057;
+        }
+
+        button,
+        .submit-btn {
+            padding: 10px 15px;
+            background-color: #F50057;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        button:hover,
+        .submit-btn:hover {
+            transform: scale(1.05);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        
+        @media screen and (max-width: 768px) {
+            .main-content {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .sidebar .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .nav-menu a {
+                width: 48%;
+                margin-bottom: 10px;
+            }
+        }
+
+        
+        header {
+            margin-bottom: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="container-fluid fixed-top" style="background-color: #212121 !important; opacity: 0.9;">
+            <nav class="navbar navbar-expand-lg navbar-dark" id="navbar" style=" color: white; background-color:#212121;">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <i class="fa fa-heartbeat fa-2x nav-brand" style=" color: #F50057;" aria-hidden="true"></i>
+                <a class="navbar-brand" id="navbra" href="index.html"
+                    style="margin-right:auto; margin-left: 0px; font-size: 18px !important;">&nbsp;Nexelance</a>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <ul class="navbar-nav mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="login.html"><button class="Btn"><span>login </span></button></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+    </header>
+    <div class="portal-container">
+        <aside class="sidebar">
+            <nav class="nav-menu">
+                <a href="#" class="nav-link" data-target="dashboard">Dashboard</a>
+                <a href="#" class="nav-link active" data-target="profile">Profile</a>
+                <a href="#" class="nav-link" data-target="project-submission">Project Submission</a>
+                <a href="#" class="nav-link" data-target="notifications">Notifications</a>
+                <a href="#" class="nav-link" data-target="support">Support</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <section id="dashboard" class="dashboard">
+                <h1>Dashboard</h1>
+                <div class="card">
+                    <h2>Recent Activity</h2>
+                    <p>Submitted Project "E-commerce Website" on 12th August 2024</p>
+                    <p>Updated Profile Information on 10th August 2024</p>
+                </div>
+                <div class="card">
+                    <h2>Stats</h2>
+                    <p>Total Projects Submitted: 5</p>
+                    <p>Pending Reviews: 2</p>
+                </div>
+            </section>
+            <section id="profile" class="profile active-section">
+                <h1>Profile</h1>
+                <div id="profile-info-card" class="card">
+                    <h2>User Information</h2>
+                    <p><strong>Name:</strong> <span id="profile-name">Haseeb</span></p>
+                    <p><strong>Email:</strong> <span id="profile-email">Haseeb12@example.com</span></p>
+                    <p><strong>Password:</strong> <span id="profile-password">Haseeb123</span></p>
+                    <p><strong>Location:</strong> <span id="profile-location">Islamabad</span></p>
+                    <button class="edit-profile-btn">Edit Profile</button>
+                </div>
+                <div id="profile-form-container" class="card" style="display: none;">
+                    <h2>Edit Profile</h2>
+                    <form id="profile-form">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password">
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="location">
+                        <button type="
+                        <button type="submit" class="submit-btn">Save</button>
+                        <button type="button" id="cancel-edit" class="submit-btn">Cancel</button>
+                    </form>
+                </div>
+            </section>
+            <section id="project-submission">
+                <h1>Project Submission</h1>
+                <div class="card">
+                    <h2>Submit a New Project</h2>
+                    <form id="project-form">
+                        <label for="project-title">Project Title:</label>
+                        <input type="text" id="project-title" name="project-title">
+                        <label for="project-description">Description:</label>
+                        <textarea id="project-description" name="project-description"></textarea>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </section>
+            <section id="notifications">
+                <h1>Notifications</h1>
+                <div class="card">
+                    <h2>Recent Notifications</h2>
+                    <p>No new notifications.</p>
+                </div>
+            </section>
+            <section id="support">
+                <h1>Support</h1>
+                <div class="card">
+                    <h2>Contact Support</h2>
+                    <p>If you need help, please reach out to support@example.com</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="page-footer container-fluid f">
+        <div class="row container-fluid animate__animated fadeIn">
+            <div class="col-md-4 f1 animate__animated fadeInLeft">
+              
+
+                    <h3 >About us</h3>
+                    <hr>
+                    <i class=" fa fa-heartbeat fa-5x" style=" color: #F50057; " aria-hidden=" true "></i>
+                    <br>
+                    <span>
+                        <p class="p-3">Nexelance is the Software Development Company in Pakistan having the
+                            specialists
+                            for
+                            creating the compelling and highly interactive websites & Softwares. Using
+                            our
+                            powerful
+                            strategies we have created
+                            some amazing websites & Softwares for our customers and have helped them to
+                            market
+                            their
+                            business properly.</p>
+                    </span>
+           
+
+            </div>
+            <div class="col-md-4 f2 animate__animated fadeInUp" >
+              
+                    <h3>Our Services</h3>
+                    <hr>
+
+                    <ul>
+                        <li>
+                            <p><i class=" fa fa-check "></i> Graphic Designing</p>
+                        </li>
+                        <li>
+                            <p><i class=" fa fa-check "></i> Logo Designing </p>
+                        </li>
+                        <li>
+                            <p><i class=" fa fa-check "></i> Content Writing </p>
+                        </li>
+                        <li>
+                            <p><i class=" fa fa-check "></i> Website/Software Design</p>
+                        </li>
+                        <li>
+                            <p><i class=" fa fa-check "></i> wordpress Web-Development </p>
+                        </li>
+                        <li>
+                            <p><i class=" fa fa-check "></i> E-commerce Web-Development </p>
+                        </li>
+                        <li>
+                            <p><i class=" fa fa-check "></i> Android/IoS App-Development </p>
+                        </li>
+                        <li>
+                            <p><i class=" fa fa-check "></i> Website/Software Development </p>
+                        </li>
+                    </ul>
+               </div>
+            <div class=" col-md-4 f3 animate__animated fadeInRight">
+                
+                    <h3>Contact Details</h3>
+                    <hr>
+                    <p> 
+                        Office: Blue Area, Islamabad </p>
+                    <p> <b>Timing :</b> Mon-Sat, 10:00am to 6:00pm</p>                      
+                    <p><b>Email:</b> info@Nexelance.com
+                    </p>                   
+                    <p><b>Phone:</b> +92-300-0101010</p>
+
+                  
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-md-12 footer_credit animate__animated fadeIn ">
+                <strong> Copyright © 2020 Nexelance </strong>
+            </div>
+        </div>
+
+</footer>
+    <script>
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function () {
+                document.querySelectorAll('.nav-menu a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+
+                const target = this.getAttribute('data-target');
+                document.querySelectorAll('main section').forEach(section => {
+                    if (section.id === target) {
+                        section.classList.add('active-section');
+                    } else {
+                        section.classList.remove('active-section');
+                    }
+                });
+            });
+        });
+
+        document.querySelector('.edit-profile-btn').addEventListener('click', function () {
+            document.getElementById('profile-info-card').style.display = 'none';
+            document.getElementById('profile-form-container').style.display = 'block';
+
+            document.getElementById('name').value = document.getElementById('profile-name').textContent;
+            document.getElementById('email').value = document.getElementById('profile-email').textContent;
+            document.getElementById('password').value = document.getElementById('profile-password').textContent;
+            document.getElementById('location').value = document.getElementById('profile-location').textContent;
+        });
+
+        document.getElementById('cancel-edit').addEventListener('click', function () {
+            document.getElementById('profile-info-card').style.display = 'block';
+            document.getElementById('profile-form-container').style.display = 'none';
+        });
+
+        document.getElementById('profile-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const location = document.getElementById('location').value;
+
+            document.getElementById('profile-name').textContent = name;
+            document.getElementById('profile-email').textContent = email;
+            document.getElementById('profile-password').textContent = password;
+            document.getElementById('profile-location').textContent = location;
+
+            document.getElementById('profile-info-card').style.display = 'block';
+            document.getElementById('profile-form-container').style.display = 'none';
+        });
+    </script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

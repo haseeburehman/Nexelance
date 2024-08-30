@@ -1,0 +1,22 @@
+.logout-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+.logout-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.login-link:hover {
+    background-color: #0056b3;
+}
